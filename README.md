@@ -11,7 +11,7 @@ You can choose between:
 ` docker build -t selenium . ` (in the same path of your Dockerfile)
 
 ##### 2) Pull it from docker hub:
-` docker pull pimuzzo/selenium_python_xvfb `
+` docker pull pimuzzo/selenium-python-xvfb `
 
 #### RUN CONTAINER:
 
