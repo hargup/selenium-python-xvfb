@@ -8,10 +8,18 @@ ENV DISPLAY :99
 #================================================
 
 RUN apt-get update && apt-get install -y $BROWSER \
-        build-essential libssl-dev python-setuptools \
+        build-essential libssl-dev \
         vim xvfb xz-utils zlib1g-dev
 
-RUN easy_install pip
+RUN wget --quiet
+https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O
+/miniconda.sh
+
+RUN bash /miniconda.sh -b -p /opt/conda &&
+
+ENV PATH /opt/conda/bin:$PATH
+
+RUN conda install pip
 
 RUN pip install selenium pyvirtualdisplay requests unittest-xml-reporting
 
